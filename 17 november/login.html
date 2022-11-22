@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css"/>
+    <!--Local storage and regex validation-->
+<script>
+    function store()
+    {
+        var name = document.getElementById('name');
+        var pw = document.getElementById('pw');
+        var lowerCaseLetters = /[a-z]/g;
+        var upperCaseLetters = /[A-Z]/g;
+        var numbers = /[0-9]/g;
+        if(name.value.length==0 || pw.value.length==0 || (pw.value.length==0 && name.value.length==0))
+        {
+            alert('Please fill the required fields');
+        }
+        else
+        {
+        localStorage.setItem('name', name.value);
+        localStorage.setItem('pw', pw.value);
+        alert('Your account has been created');
+        }
+    }
+</script>
+ </head>
+<body>
+    <div class="login">
+    <form name='form-register'>
+
+        <h1><strong>Login Form</strong></h1><br/>
+
+        <label for="name"><strong>Email</strong></label><br/>
+        <input id="name" type="email" placeholder="xxx@gmail.com" required ><br/><br/>
+
+        <label for="pw"><strong>password</strong></label><br/>
+        <input id="pw" type="text" placeholder="Password" required>
+        <br/><br/><br/>
+        <button type="submit" onclick="store()">Login</button>
+     </form>
+</div>
+</body>
+</html>

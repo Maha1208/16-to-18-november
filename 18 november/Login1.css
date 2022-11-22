@@ -1,0 +1,73 @@
+
+label
+{
+    font-size: larger;
+    display:inline-block;
+    text-align: center;
+    width: 90 px;
+}
+
+form
+{
+display:block;
+padding: 0px 30px 50px 65px;
+margin: auto;
+width:300px;
+border: 2px solid;
+border-radius: 2em;
+border-color: rgb(13, 14, 14);
+border-color: #761cae;
+background-color:lavenderblush;
+
+}
+
+#signinpw
+{
+font-size: medium;  
+width: 250px;
+height: 40px;
+border-radius: 10px;
+}
+#mail
+{
+font-size: medium;  
+width: 250px;
+height: 40px;
+border-radius: 10px;
+}
+
+button
+{
+background-color: rgb(105, 212, 196);
+padding:10px;
+width:170px;
+height: 50px;
+font-size: medium;
+border-radius: 100px;
+transition: width 2s;
+cursor: pointer;
+margin-left: 50px;
+}
+
+button:hover
+{
+    background: #bca1d4;
+    box-shadow: green;
+}
+
+h1
+{
+    margin-left: 80px;
+}
+
+
+body
+{
+    padding:100px 100px 100px 180px;
+    background-image: url('em2.png');
+    background-size: 1490px 800px; 
+}
+
+
+
+  

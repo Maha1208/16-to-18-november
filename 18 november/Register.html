@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="Register.css"/>
+    <script>
+     function store()
+    {
+        var fname = document.getElementById('fname');
+        var lname= document.getElementById('lname');    
+        var email = document.getElementById('email');
+        var dob = document.getElementById('dob');
+        var address = document.getElementById('address');
+        var city = document.getElementById('city');
+        var state = document.getElementById('state');
+        var zipcode = document.getElementById('zipcode');
+        var phoneno= document.getElementById('phoneno');
+        //generating password using random method
+            pw=Math.floor(100000+Math.random()*900000)
+            
+        if(fname.value.length==0 || lname.value.length==0 ||email.value.length==0 || dob.value.length==0 
+        || address.value.length==0 || city.value.length==0 || state.value.length==0 || zipcode.value.length==0 || phoneno.value.length==0) 
+        {
+            alert('Please fill the required fields');
+        }
+        else
+        {
+        localStorage.setItem('fname',fname.value);
+        localStorage.setItem('lname',lname.value);
+        localStorage.setItem('email',email.value);
+        localStorage.setItem('dob',dob.value);
+        localStorage.setItem('address',address.value);
+        localStorage.setItem('city',city.value);
+        localStorage.setItem('state',state.value);
+        localStorage.setItem('zipcode',zipcode.value);
+        localStorage.setItem('phoneno',phoneno.value);
+        localStorage.setItem('password',pw);
+        alert(`Your account has been created and your password is ${pw}`);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Home</a>
+            <a href="Login1.html">Login</a>
+        </nav>
+    </div>
+    <div class="register_form">
+    <form action="Login1.html">
+    <h1><b>Register</b></h1>
+    <label for="name"><b>Name</b></label>
+    <br/><br/>
+    <input style="width: 180px;height: 25px;" id="fname" type="text" placeholder="Firstname"  required>
+    <input style="width: 180px;height: 25px;margin-left: 40px;"type="text" placeholder="LastName" id="lname" required>
+    <br/><br/>
+    <label for="email" ><b>Email</b></label>  
+    <label for="dob" style="margin-left: 189px;"><b>DOB</b></label>
+    <br/>
+    <input style="width: 180px;height: 25px;"type="email" placeholder="Email" id="email" required>
+    <input style="width: 180px;height: 25px;margin-left: 40px;"type="date" placeholder="Date Of Birth" id="dob" required>
+    <br/><br/>
+    <label for="PhoneNo"><b>PhoneNo</b></label><br/>
+    <input style="width: 170px;height: 25px;"type="Number" placeholder="PhoneNumber" id="phoneno" required pattern="[?=.*\d].{10}">
+    <br/><br/>
+    <label for="address"><b>Address</b></label>
+    <br/>
+    
+    <textarea style="width: 420px;height: 30px;" type="text" placeholder="street name/door.no" id="address" required></textarea>
+    <br/><br/>
+    <input style="width: 170px;height: 25px;" type="text" placeholder="city" id="city" required>
+
+    <select style="width: 180px;height: 40px;margin-left: 40px;" name="select" id="state">
+        <option value="&nbsp;">Select state</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachel Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="Gairsain">Gairsain</option>
+        <option value="West Bengal">West Bengal</option>
+    </select>
+
+    <br/><br/>
+    <input style="width: 170px;height: 25px;"type="integer" placeholder="Pin/Zipcode" id="zipcode" required>
+    <br/><br/><br/>
+    <button type="submit" onclick="store()">Register</button> 
+</form>  
+</div>
+</body>
+</html>

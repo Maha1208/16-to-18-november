@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login1.css"/>
+    <script>
+    //Show and hide password check box validation
+        function myFunction(){
+            var pw=document.getElementById("signinpw")
+            if(pw.type ==='text')
+            {
+                pw.type ='password'
+            }
+            else
+            {
+               pw.type ='text'
+            }
+        }
+//checking correct password and gmail
+    function check()
+    {
+    var Useremail = localStorage.getItem('email');
+    var entered = document.getElementById('mail').value
+    var Userpass = localStorage.getItem('password')
+    var enteredpw=document.getElementById('signinpw').value
+
+    if(entered == Useremail && enteredpw == Userpass)
+    {
+        alert('You are logged in.');
+    
+    }
+    else
+    {
+        alert('incorrect password or emailid');
+    }
+}
+//automatic getting password from local storage after entered gmail
+function getPass(event)
+    {
+    let email=localStorage.getItem('email');
+    if(email==event.target.value)
+    {
+     document.getElementById("signinpw").value=localStorage.getItem('password')
+    }
+    
+    }
+    </script>
+</head>
+<body>
+    <div class="login">
+        <form action="dashboard.html">
+    
+            <h1><strong>Login</strong></h1><br/>
+    
+            <label for="name"><strong>Email</strong></label><br/>
+            <br/>
+            <input  id="mail" oninput="getPass(event)" type="email" placeholder="abcd@gmail.com" required ><br/><br/>
+    
+            <label  for="pass"><strong>Password</strong></label><br/>
+            <br/>
+            <input id="signinpw" type="password" placeholder="Password" required>
+            <br/><br/>
+            <input style="height:20px;" type="checkbox" onclick="myFunction()">
+            <br/><label for="hideandshow"> Show password </label>
+            <br/><br/><br/>
+            <button type="submit" onclick="check()">Login</button>
+         </form>
+    </div>
+    
+</body>
+</html>

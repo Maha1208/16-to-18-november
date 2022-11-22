@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1 {
+  width: 310px;
+  height: 310px;
+  padding: 20px;
+  border: 1px solid hsl(0, 2%, 11%);
+}
+</style>
+<script>
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("img", event.target.id);
+}
+
+function drop(event) 
+{
+  event.preventDefault();
+  var data = event.dataTransfer.getData("img");
+  event.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<p>Drag the image into the rectangle:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="tree.jpg" draggable="true" ondragstart="drag(event)" width="306" height="309">
+
+</body>
+</html>
+
